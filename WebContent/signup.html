@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <script>
+        window.onload = function() {
+            document.getElementById('pw_check').onkeyup = function(){
+                var pw = document.getElementById('pw').value;
+                var pwCheck = document.getElementById('pw_check').value;
+                var checker = document.getElementById('pw_checker');
+                if(pw==pwCheck){
+                    checker.innerHTML = "비밀번호가 일치합니다"
+                    checker.style.color = "blue"
+                }
+                else{
+                    checker.innerHTML = "비밀번호가 일치하지 않습니다"
+                    checker.style.color = "red"
+                    return false
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>
+        <form method="post" name="test">
+            <fieldset style="width: 50">
+                <legend>회원 정보 입력</legend>
+                아이디<br><input type="text" id="name">
+                <input type="button" id="name_check" value="중복확인">
+                <br><br>
+                비밀번호<br><input type="password" id="pw"><br><br>
+                비밀번호 확인<br><input type="password" id="pw_check"><br>
+                <p id="pw_checker">&nbsp;</p>
+                <input type="submit" id="submit" value="생성">
+            </fieldset>
+        </form>
+    </p>
+</body>
+</html>
